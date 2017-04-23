@@ -1,3 +1,6 @@
+'''Short script I wrote to check the current price of Ethereum through your terminal! 
+Saves you having to check online websites'''
+
 import requests
 import os
 import sys
