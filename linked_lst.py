@@ -50,4 +50,4 @@ class LinkedList(object):
 		while current:
 			lst.append(str(current.get_data()))
 			current = current.get_pointer()
-			print( '->'.join(lst))
+			print( '--'.join(lst))
