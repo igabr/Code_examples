@@ -1,31 +1,31 @@
 class Node(object):
 
 	def __init__(self, data=None, pointer=None):
-		self.data = data
-		self.pointer = pointer
+		self.__data = data
+		self.__pointer = pointer
 
 	def get_data(self):
-		return self.data
+		return self.__data
 
 	def get_pointer(self):
-		return self.pointer
+		return self.__pointer
 
 	def set_pointer(self, new_pointer):
-		self.pointer = new_pointer
+		self.__pointer = new_pointer
 
 class LinkedList(object):
 
 	def __init__(self, root=None):
-		self.root = root
+		self.__root = root
 
 	def insert(self, data):
 		new_node = Node(data)
-		new_node.set_pointer(self.root)
-		self.root = new_node
+		new_node.set_pointer(self.__root)
+		self.__root = new_node
 
 	@property
 	def size(self):
-		current = self.root
+		current = self.__root
 		count = 0
 
 		while current:
@@ -34,7 +34,7 @@ class LinkedList(object):
 		return count
 	
 	def search(self, data):
-		current = self.root
+		current = self.__root
 
 		while current:
 			if current.get_data() == data:
@@ -46,7 +46,7 @@ class LinkedList(object):
 	@property
 	def print_lst(self):
 		lst = []
-		current = self.root
+		current = self.__root
 		while current:
 			lst.append(str(current.get_data()))
 			current = current.get_pointer()
