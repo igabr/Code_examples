@@ -2,7 +2,6 @@
 import random
 import os
 import sys
-import string
 
 """
 Simple script that will generate random lottery numbers for Euromillions and National
@@ -43,7 +42,7 @@ def get_lotto():
 def euromillions(lines):
 
 	if lines <= 0:
-		print("No lines generated")
+		print("----**No lines generated**----")
 	else:
 		for i in range(lines):
 			main= random.sample(range(1, 51), 5) #range is not inclusive
@@ -54,7 +53,7 @@ def euromillions(lines):
 def lotto(lines):
 
 	if lines <= 0:
-		print("No lines generated")
+		print("----**No lines generated**----")
 	else:
 		for i in range(lines):
 			main = random.sample(range(1, 60), 6) #range is not inclusive
@@ -65,7 +64,7 @@ if __name__ == '__main__':
 	euro_range = get_euro()
 	print()
 	lotto_range = get_lotto()
-
+	print()
 	print("Here are the euromillions numbers: ")
 	print()
 	euromillions(euro_range)
