@@ -77,7 +77,7 @@ def conversion(parameter_1, parameter_2):
 		print()
 		print("This is not a valid amount")
 		print()
-		return conversion
+		return conversion(parameter_1, parameter_2)
 
 	if parameter_1 == "ETH":
 		USD_value = sell_price * float_amount
