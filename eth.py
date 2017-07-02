@@ -19,6 +19,8 @@ required libraries:
 	- datetime
 
 Usage:
+	This script contains python 3.6 syntax
+	
 	Go to terminal and type python3 eth.py
 
 	Follow on screen instructions.
@@ -57,9 +59,9 @@ def get_info():
 	print()
 	print("ETH stash: ", eth_stash, "ETH")
 	print()
-	print("The current buy price of 1 ETH is: ${}".format(buy_price))
+	print(f"The current buy price of 1 ETH is: ${buy_price}")
 	print()
-	print("The current sell price of 1 ETH is: ${}".format(sell_price))
+	print(f"The current sell price of 1 ETH is: ${sell_price}")
 	print()
 	print("Your current stock is worth: ${:,}".format(int(current_valuation)))
 	print()
@@ -69,7 +71,7 @@ def get_info():
 
 def conversion(parameter_1, parameter_2):
 
-	amount = input("Please type in an {} amount for conversion to {} : ".format(parameter_1, parameter_2))
+	amount = input(f"Please type in an {parameter_1} amount for conversion to {parameter_2} : ")
 
 	try:
 		float_amount = float(amount)
@@ -82,24 +84,24 @@ def conversion(parameter_1, parameter_2):
 	if parameter_1 == "ETH":
 		USD_value = sell_price * float_amount
 		print()
-		print("{} ETH is approx {} USD".format(float_amount, USD_value))
+		print(f"{float_amount} ETH is approx {USD_value} USD")
 		print()
 
 	if parameter_1 == "USD":
 		eth_value = float_amount/buy_price
 		print()
-		print("{} USD is approx {} ETH".format(float_amount, eth_value))
+		print(f"{float_amount} USD is approx {eth_value} ETH")
 		print()
 
-	question = input("""Would you like to perform another {}-{} conversion?
+	question = input(f"""Would you like to perform another {parameter_1}-{parameter_2} conversion?
 		
 		1. Yes
 
-		2. Switch to {}-{} conversion
+		2. Switch to {parameter_2}-{parameter_1} conversion
 
 		Press any key to exit.
 
-		Option Selection: """.format(parameter_1, parameter_2, parameter_2, parameter_1))
+		Option Selection: """)
 
 	if question == "1":
 		print()
@@ -129,19 +131,14 @@ if __name__ == '__main__':
 	print()
 
 	if question == "1":
-		from_ = "ETH"
-		to = "USD"
 
-		conversion(from_, to)
+		conversion("ETH", "USD")
 
 	elif question == "2":
-		from_ = "USD"
-		to = "ETH"
 
-		conversion(from_, to)
+		conversion("USD", "ETH")
 
 	else:
 
 		os.system("clear")
 		sys.exit()
-
