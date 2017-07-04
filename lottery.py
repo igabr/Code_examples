@@ -39,40 +39,30 @@ def get_lotto():
 		print()
 		return get_lotto()
 
-def euromillions(lines):
 
-	if lines <= 0:
-		print("----**No lines generated**----")
-	else:
-		for i in range(lines):
-			main= random.sample(range(1, 51), 5) #range is not inclusive
-			aux = random.sample(range(1,13), 2) #range is not inclusive
-			main.append(aux)
-			print(main)
+def euromillions():
 
-def lotto(lines):
+	for i in range(get_euro()):
+		main = random.sample(range(1,51), 5)
+		aux = random.sample(range(1,13), 2)
+		main.append(aux)
+		print(main)
 
-	if lines <= 0:
-		print("----**No lines generated**----")
-	else:
-		for i in range(lines):
-			main = random.sample(range(1, 60), 6) #range is not inclusive
-			print(main)
+
+def lotto():
+
+	for i in range(get_lotto()):
+		main = random.sample(range(1,60), 6)
+		print(main)
+
+
 
 if __name__ == '__main__':
 	print()
-	euro_range = get_euro()
+	euromillions()
 	print()
-	lotto_range = get_lotto()
+	lotto()
 	print()
-	print("Here are the euromillions numbers: ")
-	print()
-	euromillions(euro_range)
-	print()
-	
-	print("Here are the lotto numbers: ")
-	print()
-	lotto(lotto_range)
 	
 	question = input("""
 	Would you like to generate numbers again?
