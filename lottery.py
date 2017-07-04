@@ -13,43 +13,24 @@ Usage:
 Enjoy
 """
 
-def get_euro():
+def euromillions():
+
 	print()
 	euro_lines = input("How many lines for Euromillions would you like to generate? ")
-	print()
-	print("Here are the euromillions numbers: ")
-	print()
 
 	try:
 		val = int(euro_lines)
-		return val
 	except ValueError:
 		print()
 		print("Not a valid number - please enter an integer!")
 		print()
-		return get_euro()
+		euromillions()
 
-
-def get_lotto():
-
-	lotto_lines = input("How many lines for National Lottery would you like to generate? ")
 	print()
-	print("Here are the lotto numbers: ")
+	print("Here are the euromillions numbers: ")
 	print()
 
-	try:
-		val = int(lotto_lines)
-		return val
-	except ValueError:
-		print()
-		print("Not a valid number - please enter an integer")
-		print()
-		return get_lotto()
-
-
-def euromillions():
-
-	for i in range(get_euro()):
+	for i in range(val):
 		main = random.sample(range(1,51), 5)
 		aux = random.sample(range(1,13), 2)
 		main.append(aux)
@@ -58,14 +39,30 @@ def euromillions():
 
 def lotto():
 
-	for i in range(get_lotto()):
+	lotto_lines = input("How many lines for National Lottery would you like to generate? ")
+
+	try:
+		val = int(lotto_lines)
+	except ValueError:
+		print()
+		print("Not a valid number - please enter an integer")
+		print()
+		lotto()
+
+	print()
+	print("Here are the lotto numbers: ")
+	print()
+
+
+	for i in range(val):
 		main = random.sample(range(1,60), 6)
 		print(main)
 
 
-
 if __name__ == '__main__':
+	
 	euromillions()
+	
 	lotto()
 	
 	question = input("""
