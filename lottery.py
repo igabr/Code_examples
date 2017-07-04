@@ -78,7 +78,7 @@ if __name__ == '__main__':
 	Answer: """)
 	if question == "1":
 		os.system("clear")
-		os.system("python3 lottery_test.py")
+		os.system("python3 lottery.py")
 	else:
 		os.system("clear")
 		sys.exit()
