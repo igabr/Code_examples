@@ -14,7 +14,11 @@ Enjoy
 """
 
 def get_euro():
+	print()
 	euro_lines = input("How many lines for Euromillions would you like to generate? ")
+	print()
+	print("Here are the euromillions numbers: ")
+	print()
 
 	try:
 		val = int(euro_lines)
@@ -29,6 +33,9 @@ def get_euro():
 def get_lotto():
 
 	lotto_lines = input("How many lines for National Lottery would you like to generate? ")
+	print()
+	print("Here are the lotto numbers: ")
+	print()
 
 	try:
 		val = int(lotto_lines)
@@ -47,7 +54,7 @@ def euromillions():
 		aux = random.sample(range(1,13), 2)
 		main.append(aux)
 		print(main)
-
+	print()
 
 def lotto():
 
@@ -58,11 +65,8 @@ def lotto():
 
 
 if __name__ == '__main__':
-	print()
 	euromillions()
-	print()
 	lotto()
-	print()
 	
 	question = input("""
 	Would you like to generate numbers again?
@@ -74,7 +78,7 @@ if __name__ == '__main__':
 	Answer: """)
 	if question == "1":
 		os.system("clear")
-		os.system("python3 lottery.py")
+		os.system("python3 lottery_test.py")
 	else:
 		os.system("clear")
 		sys.exit()
