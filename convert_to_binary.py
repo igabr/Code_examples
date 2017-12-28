@@ -3,7 +3,7 @@ def convert_to_binary(val):
         raise ValueError("Please enter a valid integer")
 
     if val == 0:
-        return "0"
+        return "0b0"
 
     binary_string = ""
     valid_places = {}
@@ -43,12 +43,12 @@ def convert_to_binary(val):
     for i in final:
         binary_string += i[1]
 
-    return binary_string
+    return "0b" + binary_string
 
 
 # unit tests
 
-assert convert_to_binary(79) == bin(79)[2:]
-assert convert_to_binary(0) == bin(0)[2:]
-assert convert_to_binary(100) == bin(100)[2:]
-assert convert_to_binary(999) == bin(999)[2:]
+assert convert_to_binary(79) == bin(79)
+assert convert_to_binary(0) == bin(0)
+assert convert_to_binary(100) == bin(100)
+assert convert_to_binary(999) == bin(999)
