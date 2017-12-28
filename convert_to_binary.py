@@ -44,3 +44,11 @@ def convert_to_binary(val):
         binary_string += i[1]
 
     return binary_string
+
+
+# unit tests
+
+assert convert_to_binary(79) == bin(79)[2:]
+assert convert_to_binary(0) == bin(0)[2:]
+assert convert_to_binary(100) == bin(100)[2:]
+assert convert_to_binary(999) == bin(999)[2:]
